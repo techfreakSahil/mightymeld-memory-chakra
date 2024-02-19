@@ -9,8 +9,8 @@ export function Tile({ content: Content, flip, state }) {
           display="inline-block"
           width={8}
           height={8}
-          bg="blue.300"
           textAlign="center"
+          bg="gray.500"
         >
           ?
         </Box>
@@ -21,8 +21,8 @@ export function Tile({ content: Content, flip, state }) {
           display="inline-block"
           width={8}
           height={8}
-          bg="green.500"
           textAlign="center"
+          bg="yellow.500"
         >
           <Content
             style={{
@@ -40,8 +40,8 @@ export function Tile({ content: Content, flip, state }) {
           display="inline-block"
           width={8}
           height={8}
-          bg="gray.300"
           textAlign="center"
+          color="gray.300"
         >
           <Content
             style={{
