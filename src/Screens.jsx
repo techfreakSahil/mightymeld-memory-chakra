@@ -1,7 +1,7 @@
 import { useState } from "react";
 import confetti from "canvas-confetti";
 import * as icons from "react-icons/gi";
-import { Button } from "@chakra-ui/react";
+import { Box, Button } from "@chakra-ui/react";
 import { Tile } from "./Tile";
 
 export const possibleTileContents = [
@@ -19,9 +19,9 @@ export const possibleTileContents = [
 
 export function StartScreen({ start }) {
   return (
-    <div>
+    <Box>
       <Button onClick={start}>Play</Button>
-    </div>
+    </Box>
   );
 }
 
@@ -102,10 +102,10 @@ export function PlayScreen({ end }) {
   };
 
   return (
-    <div>
+    <Box>
       {getTiles(6).map((tile, i) => (
         <Tile key={i} flip={() => flip(i)} {...tile} />
       ))}
-    </div>
+    </Box>
   );
 }
