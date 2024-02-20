@@ -40,6 +40,6 @@ _All colors used in the design are standard Chakra UI colors._
 	<img src="docs/play.png" width="400" height="465">
 </kbd>
 
-<br>
-
+<kbd>
 ![App inside MightyMeld studio](docs/mightymeld.png)
+</kbd>
