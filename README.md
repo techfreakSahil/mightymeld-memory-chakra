@@ -41,5 +41,5 @@ _All colors used in the design are standard Chakra UI colors._
 </kbd>
 
 <kbd>
-![App inside MightyMeld studio](docs/mightymeld.png)
+	<img src="docs/mightymeld.png">
 </kbd>
