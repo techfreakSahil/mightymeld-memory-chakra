@@ -1,4 +1,4 @@
-# Memory Game - Tailwind CSS
+# Memory Game - Chakra UI
 
 ## Development
 
