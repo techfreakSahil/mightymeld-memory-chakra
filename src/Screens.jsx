@@ -27,6 +27,7 @@ export function StartScreen({ start }) {
 
 export function PlayScreen({ end }) {
   const [tiles, setTiles] = useState(null);
+  const [tryCount, setTryCount] = useState(0);
 
   const getTiles = (tileCount) => {
     // Throw error if count is not even.
@@ -65,6 +66,8 @@ export function PlayScreen({ end }) {
 
     // On the second flip, check if the tiles match.
     if (flippedCount === 1) {
+      setTryCount((c) => c + 1);
+
       const alreadyFlippedTile = flippedTiles[0];
       const justFlippedTile = tiles[i];
 
@@ -102,10 +105,13 @@ export function PlayScreen({ end }) {
   };
 
   return (
-    <Box>
-      {getTiles(6).map((tile, i) => (
-        <Tile key={i} flip={() => flip(i)} {...tile} />
-      ))}
-    </Box>
+    <>
+      <Box>
+        {getTiles(6).map((tile, i) => (
+          <Tile key={i} flip={() => flip(i)} {...tile} />
+        ))}
+      </Box>
+      {tryCount}
+    </>
   );
 }
