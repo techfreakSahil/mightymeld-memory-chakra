@@ -19,9 +19,55 @@ export const possibleTileContents = [
 
 export function StartScreen({ start }) {
   return (
-    <Box>
-      <Button onClick={start}>Play</Button>
-    </Box>
+    <>
+      <Box
+        height="100vh"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Box
+          w="330px"
+          bg="#EBF8FF"
+          display="flex"
+          alignItems="center"
+          flexDir="column"
+          borderRadius="xl"
+          gap="32px"
+          paddingY="80px"
+          cursor="pointer"
+        >
+          <Box
+            fontSize="xx-large"
+            fontWeight="700"
+            color="#319795"
+            textAlign="center"
+          >
+            Memory
+          </Box>
+          <Box
+            fontSize="md"
+            color="#38B2AC"
+            textAlign="center"
+            fontWeight="400"
+          >
+            Flip over tiles looking for pairs
+          </Box>
+          <Button
+            borderRadius="25px"
+            size="lg"
+            width="40%"
+            bgGradient="linear(to-b,#4FD1C5,#38B2AC,#319795)"
+            color="#F7FAFC"
+            colorScheme="teal"
+            shadow="lg"
+            onClick={start}
+          >
+            Play
+          </Button>
+        </Box>
+      </Box>
+    </>
   );
 }
 
@@ -106,12 +152,59 @@ export function PlayScreen({ end }) {
 
   return (
     <>
-      <Box>
-        {getTiles(6).map((tile, i) => (
-          <Tile key={i} flip={() => flip(i)} {...tile} />
-        ))}
+      <Box
+        h="100vh"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        flexDir="column"
+        flex="column"
+      >
+        <Box
+          mb={8}
+          textColor="#25855A"
+          fontWeight="semi-bold"
+          fontSize="larger"
+        >
+          Tries
+          <Box
+            bg={"#9AE6B4"}
+            display="inline-block"
+            fontSize="medium"
+            px={2}
+            borderRadius="8px"
+            ml={2}
+          >
+            {tryCount}
+          </Box>
+        </Box>
+
+        <Box
+          bg="#F0FFF4"
+          w="330px"
+          display="flex"
+          justifyContent="center"
+          gap={4}
+          borderRadius="12px"
+          flexWrap="wrap"
+          paddingY={3}
+        >
+          {getTiles(16).map((tile, i) => (
+            <Tile key={i} flip={() => flip(i)} {...tile} />
+          ))}
+        </Box>
+        {/* <Button
+          bg="#63B3ED"
+          borderRadius="12px"
+          marginTop={6}
+          color="#fdfdfd"
+          w="20%"
+          onClick={end}
+          colorScheme="blue"
+        >
+          End
+        </Button> */}
       </Box>
-      {tryCount}
     </>
   );
 }
